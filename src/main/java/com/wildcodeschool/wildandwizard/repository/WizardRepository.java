@@ -25,9 +25,7 @@ public class WizardRepository {
         PreparedStatement statement = null;
         ResultSet generatedKeys = null;
         try {
-            connection = DriverManager.getConnection(
-                    DB_URL, DB_USER, DB_PASSWORD
-            );
+            connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
             statement = connection.prepareStatement(
                     "INSERT INTO wizard (first_name, last_name, birthday, birth_place, biography, is_muggle) VALUES (?, ?, ?, ?, ?, ?)",
                     Statement.RETURN_GENERATED_KEYS
